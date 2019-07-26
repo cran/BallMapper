@@ -1,0 +1,12 @@
+4b544aafe65a203d8e5fdd5c6a494481 *DESCRIPTION
+2d0c7ceaa9289993f43722c6afa6c2d7 *LICENCE
+6fb5625e7860d822b905d869592e7d2f *NAMESPACE
+58f953041b848b8fbe4d583d57d2473b *R/BallMapper.R
+35555685f2d4211a84f454ef1c953861 *R/run_test.R
+e4a55246f9778904bb3e97261e788126 *R/test_BallMapper.R
+c113cf9fa58d8a39eac4af2534e8fc57 *man/BallMapper.Rd
+e358533f9e7699e84ac0021fe9745651 *man/ColorIgraphPlot.Rd
+34e4c2a2faf5b5333665fbeb2f9b1aa3 *man/GrayscaleIgraphPlot.Rd
+6823362a33f33feaab902c0a298cfa8d *man/coloredDynamicNetwork.Rd
+6cf87f676ce837ab4f4064bed6015818 *man/pointToBallList.Rd
+7866f9d9c25f579755cb071ac1d084e5 *man/simpleDynamicNetwork.Rd
