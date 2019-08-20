@@ -137,3 +137,49 @@ test_that("Test BallMapper of cyclic graph",
   expect_equal( all(pointToBallList(l$coverage)[,2] == coveringBalls) , TRUE )
 }
 )
+
+
+test_that("Test coloring as a distance from reference points in  BallMapper",
+{
+  rm(list=ls())
+  arg <- seq(from=0,to=6.2,by = 0.1)
+  points <- as.data.frame( cbind( sin(arg),cos(arg) ) )
+  reference_points <- as.data.frame(points[30:35,1:2])
+  new_coloring_functions <- color_by_distance_to_reference_points( points , reference_points )
+  newColoringMin <- (c(1.98332962,1.97089946,1.95144672,1.92711637,1.89796924,1.86407817,1.82552788,1.78241472,1.73484645,1.68294197,1.62683101,1.56665382,1.50256081,1.43471218,1.36327752 ,1.28843537, 1.21037281, 1.12928495, 1.04537446, 0.95885108,  0.86993107, 0.77883668, 0.68579561, 0.59104041, 0.49480792, 0.39733866, 0.29887626, 0.19966683,0.09995834, 0.00000000,  0.00000000, 0.00000000, 0.00000000, 0.00000000, 0.00000000, 0.09995834, 0.19966683, 0.29887626, 0.39733866, 0.49480792,  0.59104041, 0.68579561, 0.77883668, 0.86993107, 0.95885108, 1.04537446, 1.12928495, 1.21037281, 1.28843537, 1.36327752,  1.43471218, 1.50256081, 1.56665382, 1.62683101, 1.68294197, 1.73484645, 1.78241472, 1.82552788, 1.86407817, 1.89796924,  1.92711637, 1.95144672, 1.97089946))
+  newColoringAV <- (c(1.9926984,1.9906267,1.9835795,1.9715743,1.9546413,1.9328227,1.9061730,1.8747588,1.8386588,1.7979631,1.7527734,1.7032026,1.6493748,1.5914244,1.5294962,1.4637451,1.3943354,1.3214406,1.2452429,1.1659327,1.0837083,0.9987752,0.9113456,0.8216382,0.7298771,0.6362917,0.5411159,0.4445876,0.3469481,0.2484413,0.1826331,0.1496878,0.1496878,0.1826331,0.2484413,0.3469481,0.4445876,0.5411159,0.6362917,0.7298771,0.8216382,0.9113456,0.9987752,1.0837083,1.1659327,1.2452429,1.3214406,1.3943354,1.4637451,1.5294962,1.5914244,1.6493748,1.7032026,1.7527734,1.7979631,1.8386588,1.8747588,1.9061730,1.9328227,1.9546413,1.9715743,1.9835795,1.9906267))
+  expect_equal( all(abs(new_coloring_functions[,1] - newColoringMin)<0.0000001) , TRUE )
+  expect_equal( all(abs(new_coloring_functions[,2] - newColoringAV)<0.0000001) , TRUE )
+}
+)
+
+
+#test_that("Test based on the procedure that write structure of Ball Mapper to file",
+#{
+#   rm(list=ls())
+#   arg <- seq(from=0,to=6.2,by = 0.1)
+#   points <- as.data.frame( cbind( sin(arg),cos(arg) ) )
+#   values <- as.data.frame( sin(arg) )
+#   l <- BallMapper( points,values, 0.1 )
+#   storeBallMapperGraphInFile( l , "test" )
+#   r <- readBallMapperGraphFromFile( "test" )
+#
+#
+#
+#   expect_equal( all( l$vertices == r$vertices) , TRUE )
+#   expect_equal( all( l$edges == r$edges) , TRUE )
+#   expect_equal( all(abs(l$edges_strength-r$edges_strength)<0.0000001) , TRUE )
+#   for ( i in 1:length(l$points_covered_by_landmarks) )
+#   {
+#      expect_equal( all( l$points_covered_by_landmarks[[i]] == r$points_covered_by_landmarks[[i]]) , TRUE )
+#   }
+#
+#   expect_equal( all( l$landmarks == r$landmarks) , TRUE )
+#   expect_equal( all(abs(l$coloring-r$coloring)<0.0000001) , TRUE )
+#
+#   for ( i in 1:length(l$coverage) )
+#   {
+#     expect_equal( all( l$coverage[[i]] == r$coverage[[i]]) , TRUE )
+#   }
+#}
+#)

@@ -5,7 +5,9 @@
 \title{Produce a static grayscale visualization of the Ball Mapper graph. It is based on the output from the BallMapper function.}
 \usage{
 GrayscaleIgraphPlot(outputFromBallMapper, showVertexLabels = TRUE,
-  minimal_ball_radius = 7, maximal_ball_scale = 20)
+  minimal_ball_radius = 7, maximal_ball_scale = 20,
+  seed_for_plotting = -1, store_in_file = "",
+  default_x_image_resolution = 512, default_y_image_resolution = 512)
 }
 \arguments{
 \item{outputFromBallMapper, }{an output from the BallMapper function}
@@ -15,9 +17,17 @@ GrayscaleIgraphPlot(outputFromBallMapper, showVertexLabels = TRUE,
 \item{minimal_ball_radius, }{provide a minimal value of the radius of balls used in visualization (7 by default).}
 
 \item{maximal_ball_scale, }{provides a maximal value of the radius of the balls used in visualization (20 by default).}
+
+\item{seed_for_plotting, }{if set to the same number will suspend the fandom argument in the ploting rountine and produce plots with the same layout everytime.}
+
+\item{store_in_file}{if set to a string, will open a png file, and store the plot therein. By default it is set to an empty string.}
+
+\item{default_x_image_resolution}{store a default resolution of image in x direction. Set to 512 by default.}
+
+\item{default_y_image_resolution}{store a default resolution of image in y direction. Set to 512 by default.}
 }
 \value{
-None
+None.
 }
 \description{
 Produce a static grayscale visualization of the Ball Mapper graph. It is based on the output from the BallMapper function.

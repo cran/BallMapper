@@ -6,7 +6,8 @@
 For example, let us assume that point 1 is covered by landmark 1 and 2, and point 2 is covered by the landmark 2. In this case the obtained list is of a form:
 1 1
 1 2
-2 2}
+2 2
+This list can be used for a further analysis of various parts of Ball Mapper graph.}
 \usage{
 pointToBallList(coverageFromBallMapper)
 }
@@ -22,6 +23,7 @@ For example, let us assume that point 1 is covered by landmark 1 and 2, and poin
 1 1
 1 2
 2 2
+This list can be used for a further analysis of various parts of Ball Mapper graph.
 }
 \examples{
 var <- seq(from=0,to=6.3,by=0.1)

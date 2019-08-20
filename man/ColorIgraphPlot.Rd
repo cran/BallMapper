@@ -6,7 +6,10 @@
 \usage{
 ColorIgraphPlot(outputFromBallMapper, showVertexLabels = TRUE,
   showLegend = FALSE, minimal_ball_radius = 7,
-  maximal_ball_scale = 20, maximal_color_scale = 10)
+  maximal_ball_scale = 20, maximal_color_scale = 10,
+  seed_for_plotting = -1, store_in_file = "",
+  default_x_image_resolution = 512, default_y_image_resolution = 512,
+  number_of_colors = 100)
 }
 \arguments{
 \item{outputFromBallMapper, }{an output from the BallMapper function}
@@ -20,9 +23,19 @@ ColorIgraphPlot(outputFromBallMapper, showVertexLabels = TRUE,
 \item{maximal_ball_scale, }{provide a maximal value of the radius of balls used in visualization (20 by default).}
 
 \item{maximal_color_scale, }{Provide a maximal value (starting from 0) of the color of a ball (10 by default).}
+
+\item{seed_for_plotting, }{if set to the same number will suspend the fandom argument in the ploting rountine and produce plots with the same layout everytime.}
+
+\item{store_in_file}{if set to a string, will open a png file, and store the plot therein. By default it is set to an empty string.}
+
+\item{default_x_image_resolution}{store a default resolution of image in x direction. Set to 512 by default.}
+
+\item{default_y_image_resolution}{store a default resolution of image in y direction. Set to 512 by default.}
+
+\item{number_of_colors}{store a number of colors used in the plot.}
 }
 \value{
-None
+None.
 }
 \description{
 Produce a static color visualization of the Ball Mapper graph. It is based on the output from BallMapper function.
